@@ -40,7 +40,7 @@ export default {
   methods: {
     async obtenerEstudiantes() {
       try {
-        const res = await axios.get('http://localhost:3000/estudiantes');
+        const res = await axios.get('https://backend-6o5b.onrender.com/estudiantes');
         this.estudiantes = res.data.estudiantes; // <- aquí usamos res.data.estudiantes según tu backend
       } catch (error) {
         console.error("Error al obtener estudiantes:", error);
@@ -48,7 +48,7 @@ export default {
     },
     async agregarEstudiante() {
       try {
-        await axios.post('http://localhost:3000/estudiantes', this.nuevo);
+        await axios.post('https://backend-6o5b.onrender.com/estudiantes', this.nuevo);
         this.nuevo = { nombre: '', curso: '' };
         this.obtenerEstudiantes();
       } catch (error) {
